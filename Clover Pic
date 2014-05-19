@@ -1,0 +1,55 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JComponent;
+public class Clover
+{
+ public static void draw (Graphics g)
+ { Color GREEN = new Color(0,255,0);
+     final int width = 60;
+     
+     //Top row. Note that the top left corner of the drawing has cordanates (0,0)
+     int x = 50;
+     int y = 50;
+     //for (int i = 0; i < 100; i++)
+     //{
+         g.setColor(GREEN);
+         g.fillOval(140,130,75,75);
+         g.filloval(105,100,75,75);
+         g.fillOval(175,100,75,75);
+         g.fillOval(105,160,75,75);
+         g.fillOval(175,160,75,75);
+         g.fillRect(168,210,20,20);
+         g.fillRect(168,220,20,20);
+         g.fillRect(168,230,20,20);
+         //x = x + 2 * width;
+     //}
+     x = 0;
+     y = width;
+     //for (int i = 0; i < 100; i++)
+     //{
+         //g.fillRect(x,y,width,width);
+         //x = x + 2 * width;
+     //}
+ } 
+ public static void main(String[] args)
+ {
+     JFrame frame = new JFrame();
+     
+     final int FRAME_WIDTH = 400;
+     final int FRAME_HIGHT = 400;
+     
+     frame.setSize(FRAME_WIDTH, FRAME_HIGHT);
+     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     
+     JComponent component = new JComponent()
+     {
+         public void paintComponent(Graphics graph)
+         {
+             draw(graph);
+         }
+     };
+     frame.add(component);
+     frame.setVisible(true);
+ }
+}
